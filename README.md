@@ -1,2 +1,2 @@
 # ScreenShot
-ScreenShot By ctrl+F5
+A Chrome Extension to apply screen shot to clipboard by ctrl+F5.
