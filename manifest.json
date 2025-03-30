@@ -1,0 +1,35 @@
+{  
+    "manifest_version": 3,  
+    "name": "screenshot",  
+    "description": "screenshot",  
+    "version": "2.0",  
+    "action": {  
+        "default_title": "screenshot"
+    },
+    "background" : {  
+        "service_worker" : "background.js"
+    },
+	"content_scripts":[
+	{
+		"matches":["https://www.youtube.com/*", "https://*.nicovideo.jp/*", "https://virtual.spwn.jp/*"],
+		"js":["inject_yt.js"],
+		"run_at": "document_end"
+	}
+	],
+	"permissions": [
+		"tabs"
+	],
+	"host_permissions": [
+		"https://www.youtube.com/",
+		"https://nicovideo.jp/",
+		"https://virtual.spwn.jp/"
+	],
+	"commands":{
+		"capture":{
+			"suggested_key":{
+				"default":"Alt+5"
+			},
+			"description":"capture"
+		}
+	}
+}  
